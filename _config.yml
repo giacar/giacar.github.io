@@ -13,7 +13,7 @@ github_username: giacar
 form_url: "https://formspree.io/f/xoqywayy"
 social_image: "./assets/img/social-link.jpg"
 social_image_alt: # Alt text for the link preview image
-google_analytics_measurement_id: # G-XXXXXXXXXX
+google_analytics_measurement_id: G-DYZPBD2GDV
 
 sass:
   sass_dir: _sass
