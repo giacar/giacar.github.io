@@ -12,7 +12,7 @@ function checkdark(){
     for(let i = 0; i < cards.length; i++){
       cards[i].className += " " + "alt-background";
     }
-    darklogo.src = "./assets/img/light_mode_white_24dp.svg"
+    darklogo.src = "./assets/img/light_mode_white_24dp.svg";
     localStorage.setItem("isDark", true);
   }else{
     bodyElement.classList.remove('darkmode');
@@ -20,7 +20,7 @@ function checkdark(){
     for(let i = 0; i < cards.length; i++){
       cards[i].classList.remove('alt-background');
     }
-    darklogo.src = "./assets/img/dark_mode_white_24dp.svg"
+    darklogo.src = "./assets/img/dark_mode_white_24dp.svg";
     localStorage.setItem("isDark", false);
   }
 }
@@ -32,7 +32,7 @@ function darkmode(){
     for(let i = 0; i < cards.length; i++){
       cards[i].className += " " + "alt-background";
     }
-    darklogo.src = "./assets/img/light_mode_white_24dp.svg"
+    darklogo.src = "./assets/img/light_mode_white_24dp.svg";
     localStorage.setItem("isDark", true);
   }else{
     bodyElement.classList.remove('darkmode');
@@ -40,7 +40,7 @@ function darkmode(){
     for(let i = 0; i < cards.length; i++){
       cards[i].classList.remove('alt-background');
     }
-    darklogo.src = "./assets/img/dark_mode_white_24dp.svg"
+    darklogo.src = "./assets/img/dark_mode_white_24dp.svg";
     localStorage.setItem("isDark", false);
   }
 }
