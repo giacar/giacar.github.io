@@ -9,13 +9,11 @@ textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  box-sizing: border-box;
 }
 
 form {
   margin-left: auto;
   margin-right: auto;
-  box-sizing: border-box;
 }
 
 input[type="submit"] {
@@ -24,11 +22,14 @@ input[type="submit"] {
   padding: 12px 20px;
   border: none;
   cursor: pointer;
-  box-sizing: border-box;
 }
 
 input[type="submit"]:hover {
   background-color: #232fdf;
+}
+
+.g-recaptcha {
+  transform: scale(0.5);
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the 
@@ -37,9 +38,5 @@ submit button spread across the width */
   input[type="submit"] {
     width: 100%;
     margin-top: 0;
-  }
-  
-  .g-recaptcha {
-    box-sizing: border-box;
   }
 }
