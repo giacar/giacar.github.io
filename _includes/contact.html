@@ -1,6 +1,6 @@
 <h2>Contattami</h2>
 <div class="card">
-  <form action="{{site.form_url}}" method="POST">
+  <form id="contact-form" action="{{site.form_url}}" method="POST">
     <label for="fname">Nome</label>
     <input
       type="text"
@@ -27,8 +27,30 @@
       placeholder="Scrivi qualcosa..."
       style="height: 170px"
     ></textarea>
-    <!--<div class="g-recaptcha" data-sitekey="6Lf6EyEbAAAAAKufzaOfV1nrADEdgMBEcbkk00Q6"></div>
-    <br/>-->
-    <input type="submit" value="Invia" class="button" />
+    <div id="recaptcha" class="g-recaptcha" 
+      data-sitekey="6LcxeCEbAAAAAGpeRwYZUYkOgmLXBsl5XY6lzjdV"
+      data-size="invisible" 
+      data-callback='onCompleted'>
+    </div>
+    <input id="submit" type="submit" value="Invia" class="button" />
   </form>
 </div>
+<script>
+  $('#contact-form').submit(function(event) {
+      console.log('form submitted.');
+
+      if (!grecaptcha.getResponse()) {
+          console.log('captcha not yet completed.');
+
+          event.preventDefault(); //prevent form submit
+          grecaptcha.execute();
+      } else {
+          console.log('form really submitted.');
+      }
+  });
+
+  onCompleted = function() {
+      console.log('captcha completed.');
+      $('#contact-form').submit();
+  }
+</script>
