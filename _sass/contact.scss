@@ -29,7 +29,7 @@ input[type="submit"]:hover {
 }
 
 .g-recaptcha {
-  width: 100%;
+  width: 50%;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the 
@@ -38,5 +38,12 @@ submit button spread across the width */
   input[type="submit"] {
     width: 100%;
     margin-top: 0;
+  }
+
+  #rc-imageselect, .g-recaptcha {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
   }
 }
