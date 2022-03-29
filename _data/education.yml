@@ -1,15 +1,16 @@
-- course: Liceo Scientifico Tradizionale
-  institute: Liceo Scientifico Lazzaro Spallanzani di Tivoli
-  dates: 2010 - 2015
-  logo: liceo.png
+- course: LM - Engineering in Computer Science
+  institute: Università La Sapienza di Roma
+  dates: 2018 - 2022
+  logo: sapienza.png
 
 - course: L - Ingegneria Informatica e Automatica
   institute: Università La Sapienza di Roma
   dates: 2015 - 2018
   logo: sapienza.png
-  
-- course: LM - Engineering in Computer Science
-  institute: Università La Sapienza di Roma
-  dates: 2018 - in corso
-  logo: sapienza.png
+
+- course: Liceo Scientifico Tradizionale
+  institute: Liceo Scientifico Lazzaro Spallanzani di Tivoli
+  dates: 2010 - 2015
+  logo: liceo.png
+
   

@@ -9,8 +9,8 @@
       icon: devicon-python-plain
       
     - skill: C++
-      profeciency: Beginner
-      icon: devicon-c-plain
+      profeciency: Advanced
+      icon: devicon-cplusplus-plain
 
     - skill: Java
       profeciency: Intermediate
@@ -35,7 +35,7 @@
 - name: Soft Skills
   skills:
     - skill: Communication Skills
-      profeciency: Beginner
+      profeciency: Intermediate
       icon: fas fa-satellite-dish
 
     - skill: Presentation Skills
