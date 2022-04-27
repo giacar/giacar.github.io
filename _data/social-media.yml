@@ -19,13 +19,13 @@ linkedin:
 facebook:
   id: "gianmarco.cariggi"
   href: "https://www.facebook.com/"
-  title: "Twitter"
+  title: "Facebook"
   fa-icon: "fab fa-facebook fa-2x"
 
 instagram:
   id: "gianmarcocariggi"
   href: "https://www.instagram.com/"
-  title: "Twitter"
+  title: "Instagram"
   fa-icon: "fab fa-instagram fa-2x"
 
 twitter:
