@@ -9,6 +9,6 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 
-gem "webrick", "~> 1.8.1"
+gem "webrick", ">= 2.2.8"
 
 gem 'rack-cors'
