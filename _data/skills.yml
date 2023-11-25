@@ -16,20 +16,17 @@
       profeciency: Intermediate
       icon: devicon-java-plain
 
+    - skill: Go
+      profeciency: Intermediate
+      icon: devicon-go-original-wordmark
+
 # frameworks section
 - name: Frameworks
   skills:
-    - skill: Flutter
-      profeciency: Intermediate
-      icon: devicon-flutter-plain
 
-    - skill: Django
-      profeciency: Advanced
-      icon: devicon-django-plain
-      
-    - skill: Express.js
-      profeciency: Beginner
-      icon: devicon-express-original
+    - skill: Spring Boot
+      profeciency: Intermediate
+      icon: devicon-spring-plain
 
 # interpersonal section
 - name: Soft Skills

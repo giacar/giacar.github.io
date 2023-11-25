@@ -1,9 +1,3 @@
-email:
-  id: "gianmarco.cariggi@hotmail.it"
-  href: "mailto:"
-  title: "Email"
-  fa-icon: "fa-envelope-square fa-2x"
-
 github:
   id: "giacar"
   href: "https://github.com/"
@@ -15,22 +9,4 @@ linkedin:
   href: "https://linkedin.com/in/"
   title: "Linkedin"
   fa-icon: "fa-linkedin-square fa-2x"
-
-facebook:
-  id: "gianmarco.cariggi"
-  href: "https://www.facebook.com/"
-  title: "Facebook"
-  fa-icon: "fab fa-facebook fa-2x"
-
-instagram:
-  id: "gianmarcocariggi"
-  href: "https://www.instagram.com/"
-  title: "Instagram"
-  fa-icon: "fab fa-instagram fa-2x"
-
-twitter:
-  id: "GCariggi"
-  href: "https://www.twitter.com/"
-  title: "Twitter"
-  fa-icon: "fab fa-twitter fa-2x"
   
