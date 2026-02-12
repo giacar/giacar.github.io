@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gray-200 dark:bg-gray-800 border-4 border-white dark:border-gray-900 overflow-hidden mx-auto">
              {/* Placeholder Image */}
              <img 
-               src="https://picsum.photos/300/300" 
+               src="https://avatars.githubusercontent.com/u/34303206?v=4" 
                alt={profile.name} 
                className="w-full h-full object-cover"
              />
