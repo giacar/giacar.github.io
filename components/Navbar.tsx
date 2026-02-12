@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
-import { NAVIGATION, PROFILE } from '../constants';
+import { useLanguage } from './LanguageContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,10 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'it' ? 'en' : 'it');
+  };
 
   return (
     <nav 
@@ -31,7 +36,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {NAVIGATION.map((item) => (
+          {t.nav.map((item) => (
             <a
               key={item.label}
               href={item.href}
@@ -40,13 +45,27 @@ const Navbar: React.FC = () => {
               {item.label}
             </a>
           ))}
-          <div className="pl-4 border-l border-gray-200 dark:border-gray-700">
+          <div className="pl-4 border-l border-gray-200 dark:border-gray-700 flex items-center gap-2">
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-full transition-colors hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium text-sm flex items-center gap-1"
+              aria-label="Toggle Language"
+            >
+              <Languages size={16} />
+              {language.toUpperCase()}
+            </button>
             <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-4">
+          <button
+            onClick={toggleLanguage}
+            className="text-gray-700 dark:text-gray-200 font-bold text-sm"
+          >
+            {language.toUpperCase()}
+          </button>
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -60,7 +79,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Nav Overlay */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-gray-800 shadow-xl py-4 px-4 flex flex-col gap-4 animate-fade-in">
-          {NAVIGATION.map((item) => (
+          {t.nav.map((item) => (
             <a
               key={item.label}
               href={item.href}

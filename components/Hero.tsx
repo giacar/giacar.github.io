@@ -1,8 +1,12 @@
 import React from 'react';
-import { PROFILE } from '../constants';
+import { SOCIALS } from '../constants';
 import { ChevronDown } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
+  const { profile } = t;
+
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-16 overflow-hidden">
       {/* Background Decor */}
@@ -18,7 +22,7 @@ const Hero: React.FC = () => {
              {/* Placeholder Image */}
              <img 
                src="https://picsum.photos/300/300" 
-               alt={PROFILE.name} 
+               alt={profile.name} 
                className="w-full h-full object-cover"
              />
            </div>
@@ -26,20 +30,20 @@ const Hero: React.FC = () => {
 
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-            {PROFILE.name}
+            {profile.name}
           </span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light mb-8 max-w-2xl mx-auto">
-          {PROFILE.role}
+          {profile.role}
         </p>
 
         <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-lg mx-auto leading-relaxed">
-          {PROFILE.tagline}
+          {profile.tagline}
         </p>
 
         <div className="flex justify-center gap-6 mb-12">
-          {PROFILE.socials.map((social) => (
+          {SOCIALS.map((social) => (
             <a
               key={social.name}
               href={social.url}
@@ -57,7 +61,7 @@ const Hero: React.FC = () => {
           href="#experience" 
           className="inline-flex flex-col items-center text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors animate-bounce"
         >
-          <span className="text-sm font-medium mb-1">Scopri di più</span>
+          <span className="text-sm font-medium mb-1">{profile.cta}</span>
           <ChevronDown size={24} />
         </a>
       </div>

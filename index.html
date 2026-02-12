@@ -40,9 +40,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Google ReCaptcha (Client Side) -->
-    <!-- Note: Replace 'YOUR_RECAPTCHA_SITE_KEY' in the URL query param if strictly necessary for explicit rendering, 
-         but for implicit/invisible or v2 checkbox, just loading the api.js is usually enough. -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Added render=explicit to prevent auto-rendering conflicts with React -->
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
   <script type="importmap">
 {
   "imports": {

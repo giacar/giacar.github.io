@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TimelineItem from './components/TimelineItem';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
-import { EXPERIENCE_DATA, EDUCATION_DATA, CERTIFICATIONS_DATA } from './constants';
+import { GOOGLE_ANALYTICS_ID } from './constants';
+import { LanguageProvider, useLanguage } from './components/LanguageContext';
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-sans selection:bg-blue-100 dark:selection:bg-blue-900/50">
       <Navbar />
@@ -19,18 +22,18 @@ const App: React.FC = () => {
         <section id="experience" className="py-20 container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Esperienza Lavorativa
+              {t.titles.experience}
             </h2>
             <div className="w-20 h-1.5 bg-blue-600 rounded-full mx-auto" />
           </div>
           
           <div className="relative">
             <div className="flex flex-col gap-0">
-              {EXPERIENCE_DATA.map((item, index) => (
+              {t.experience.map((item, index) => (
                 <TimelineItem 
                   key={item.id} 
                   data={item} 
-                  isLast={index === EXPERIENCE_DATA.length - 1} 
+                  isLast={index === t.experience.length - 1} 
                 />
               ))}
             </div>
@@ -42,13 +45,13 @@ const App: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Certificazioni
+                {t.titles.certifications}
               </h2>
               <div className="w-20 h-1.5 bg-purple-500 rounded-full mx-auto" />
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {CERTIFICATIONS_DATA.map((item) => (
+              {t.certifications.map((item) => (
                 <TimelineItem 
                    key={item.id} 
                    data={item} 
@@ -64,13 +67,13 @@ const App: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Formazione
+                {t.titles.education}
               </h2>
               <div className="w-20 h-1.5 bg-emerald-500 rounded-full mx-auto" />
             </div>
 
             <div className="grid gap-8 md:grid-cols-2">
-              {EDUCATION_DATA.map((item) => (
+              {t.education.map((item) => (
                 <TimelineItem 
                    key={item.id} 
                    data={item} 
@@ -87,10 +90,10 @@ const App: React.FC = () => {
              <div className="p-8 md:p-12">
                <div className="text-center mb-10">
                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                   Contattami
+                   {t.titles.contact}
                  </h2>
                  <p className="text-gray-600 dark:text-gray-400">
-                   Hai un progetto in mente o vuoi semplicemente fare due chiacchiere? Compila il form qui sotto.
+                   {t.titles.contactSubtitle}
                  </p>
                </div>
                
@@ -102,6 +105,42 @@ const App: React.FC = () => {
 
       <Footer />
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  // Initialize Google Analytics
+  useEffect(() => {
+    // Only inject if ID is configured and valid
+    if (GOOGLE_ANALYTICS_ID && GOOGLE_ANALYTICS_ID.startsWith('G-')) {
+      const scriptId = 'ga-script';
+      
+      // Prevent duplicate injection
+      if (!document.getElementById(scriptId)) {
+        // 1. Load the GTag script from Google
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
+        document.head.appendChild(script);
+
+        // 2. Initialize the GTag configuration
+        const inlineScript = document.createElement('script');
+        inlineScript.innerHTML = `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GOOGLE_ANALYTICS_ID}');
+        `;
+        document.head.appendChild(inlineScript);
+      }
+    }
+  }, []);
+
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 };
 

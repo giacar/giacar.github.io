@@ -18,3 +18,5 @@ export enum Theme {
   LIGHT = 'light',
   DARK = 'dark',
 }
+
+export type Language = 'it' | 'en';
