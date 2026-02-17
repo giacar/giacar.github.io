@@ -30,13 +30,13 @@ export const CONTENT = {
     },
     nav: [
       { label: 'Home', href: '#home' },
-      { label: 'Esperienza', href: '#experience' },
+      { label: 'Esperienze', href: '#experience' },
       { label: 'Certificazioni', href: '#certifications' },
       { label: 'Formazione', href: '#education' },
       { label: 'Contatti', href: '#contact' },
     ],
     titles: {
-      experience: "Esperienza Lavorativa",
+      experience: "Esperienze Lavorative",
       certifications: "Certificazioni",
       education: "Formazione",
       contact: "Contattami",
