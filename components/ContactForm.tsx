@@ -207,7 +207,7 @@ const ContactForm: React.FC = () => {
       </button>
 
       <p className="text-xs text-gray-400 dark:text-gray-500 mt-4 text-center">
-        {labels.privacy} <a href="https://policies.google.com/privacy" className="underline hover:text-blue-500" target="_blank" rel="noreferrer">Privacy Policy</a>, <a href="https://policies.google.com/terms" className="underline hover:text-blue-500" target="_blank" rel="noreferrer">Terms of Service</a>.
+        {labels.privacy}
       </p>
     </form>
   );
