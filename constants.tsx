@@ -56,7 +56,7 @@ export const CONTENT = {
       sendAnother: "Invia un altro messaggio",
       error: "Si è verificato un errore durante l'invio. Riprova più tardi.",
       networkError: "Errore di connessione. Controlla la tua rete.",
-      privacy: "Questo sito è protetto da reCAPTCHA e si applicano la Privacy Policy e i Termini di Servizio di Google."
+      privacy: "Questo sito è protetto da reCAPTCHA."
     },
     experience: [
       {
@@ -150,7 +150,7 @@ export const CONTENT = {
       sendAnother: "Send another message",
       error: "An error occurred while sending. Please try again later.",
       networkError: "Connection error. Please check your network.",
-      privacy: "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply."
+      privacy: "This site is protected by reCAPTCHA."
     },
     experience: [
       {
